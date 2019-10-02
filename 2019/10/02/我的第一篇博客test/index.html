@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ThinkPHP框架 今日目标（每日任务）1 能够安装ThinkPHP5框架并熟悉常用目录结构 2 能够使用ThinkPHP5框架的控制器 3 能够命令行创建模块目录和文件 4 能够使用ThinkPHP5框架的Request请求类 5 能够进行模板渲染 一、框架概述1、什么是框架框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/我的第一篇博客test/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ThinkPHP框架 今日目标（每日任务）1 能够安装ThinkPHP5框架并熟悉常用目录结构 2 能够使用ThinkPHP5框架的控制器 3 能够命令行创建模块目录和文件 4 能够使用ThinkPHP5框架的Request请求类 5 能够进行模板渲染 一、框架概述1、什么是框架框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps62F7.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6327.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6328.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6339.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps633A.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps633B.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps634B.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635C.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635D.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635E.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps636E.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps636F.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6370.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229371393.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6382.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6383.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6384.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6395.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6396.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsAFC3.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB002.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB003.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB004.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB005.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB016.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB017.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB018.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB019.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB029.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB02A.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB02B.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB03C.tmp.jpg">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229297100.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229323006.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229272862.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229244022.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562228904272.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562228971516.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229048578.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229014904.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229073574.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229165085.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229188964.png">
+<meta property="og:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229209387.png">
+<meta property="og:updated_time" content="2019-10-02T14:28:32.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ThinkPHP框架 今日目标（每日任务）1 能够安装ThinkPHP5框架并熟悉常用目录结构 2 能够使用ThinkPHP5框架的控制器 3 能够命令行创建模块目录和文件 4 能够使用ThinkPHP5框架的Request请求类 5 能够进行模板渲染 一、框架概述1、什么是框架框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一">
+<meta name="twitter:image" content="d:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps62F7.tmp.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-我的第一篇博客test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/02/我的第一篇博客test/" class="article-date">
+  <time datetime="2019-10-02T14:26:34.102Z" itemprop="datePublished">2019-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ThinkPHP框架</p>
+<h1 id="今日目标（每日任务）"><a href="#今日目标（每日任务）" class="headerlink" title="今日目标（每日任务）"></a>今日目标（每日任务）</h1><p>1 能够安装ThinkPHP5框架并熟悉常用目录结构</p>
+<p>2 能够使用ThinkPHP5框架的控制器</p>
+<p>3 能够命令行创建模块目录和文件</p>
+<p>4 能够使用ThinkPHP5框架的Request请求类</p>
+<p>5 能够进行模板渲染</p>
+<h1 id="一、框架概述"><a href="#一、框架概述" class="headerlink" title="一、框架概述"></a>一、框架概述</h1><h2 id="1、什么是框架"><a href="#1、什么是框架" class="headerlink" title="1、什么是框架"></a>1、什么是框架</h2><p>框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一些模块的增删改查逻辑代码。</p>
+<p>使用框架开发项目，有便于代码重用、开发效率高、代码规范好、便于功能扩展等优点。</p>
+<h2 id="2、php中的主流框架"><a href="#2、php中的主流框架" class="headerlink" title="2、php中的主流框架"></a>2、php中的主流框架</h2><p>①Zend Framework 框架，PHP官方框架。</p>
+<p>②YII框架，又叫易框架。</p>
+<p>③Symfony 框架。</p>
+<p>④Laravel框架，市场使用较多。</p>
+<p>⑤Codelgniter框架，简称CI框架。</p>
+<p>⑥ThinkPHP框架，简称TP框架，常用版本：3.2.3和 5.0.*版本。</p>
+<p>ThinkPHP是国人自己开发的框架。有中文官网、中文帮助文档、中文社区，以及丰富的百度搜索资源。所以ThinkPHP很适合作为入门级的开发框架。</p>
+<p>这些框架大多都基于MVC设计思想和面向对象的。</p>
+<p><strong>mvc：</strong></p>
+<p>M:模型model，处理业务数据，与数据库做交互。</p>
+<p>V:视图view，显示html页面，用户能够看到并与之交互的页面。</p>
+<p>C：控制器controller，接收请求，调用模型处理数据，调用视图显示页面。</p>
+<p>整个网站应用，分为模型、视图、控制器三大部分组成。</p>
+<h1 id="二、ThinkPHP框架安装"><a href="#二、ThinkPHP框架安装" class="headerlink" title="二、ThinkPHP框架安装"></a>二、ThinkPHP框架安装</h1><h2 id="1、下载并解压框架"><a href="#1、下载并解压框架" class="headerlink" title="1、下载并解压框架"></a><strong>1、下载并解压框架</strong></h2><p>下载地址：<a href="http://www.thinkphp.cn/down.html" target="_blank" rel="noopener">http://www.thinkphp.cn</a></p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps62F7.tmp.jpg" alt="img"> </p>
+<p>下载后解压到工作目录</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6327.tmp.jpg" alt="img"> </p>
+<h2 id="2、配置虚拟主机"><a href="#2、配置虚拟主机" class="headerlink" title="2、配置虚拟主机"></a>2、配置虚拟主机</h2><p>①通过phpStudy的“站点域名管理”进行配置或者直接修改apache的虚拟主机配置文件，</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6328.tmp.jpg" alt="img"> </p>
+<p>将站点域名指向项目目录下的public目录</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6339.tmp.jpg" alt="img"> </p>
+<p>②域名解析，修改hosts文件</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps633A.tmp.jpg" alt="img"> </p>
+<p>增加域名如下： 多个域名可以写在同一行，以空格隔开</p>
+<p>127.0.0.1       tpshop.com <a href="http://www.tpshop.com" target="_blank" rel="noopener">www.tpshop.com</a></p>
+<p>③重启apache，在浏览器访问配置的虚拟站点<a href="http://www.tpshop.com" target="_blank" rel="noopener">http://www.tpshop.com</a></p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps633B.tmp.jpg" alt="img"> </p>
+<p>看到以上界面，说明框架安装成功。</p>
+<p>apache配置参考（不要照搬）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot &quot;E:\phpStudy\WWW\tpshop\public&quot;</span><br><span class="line">    ServerName www.tpshop.com</span><br><span class="line">    ServerAlias tpshop.com</span><br><span class="line">  	&lt;Directory &quot;E:\phpStudy\WWW\tpshop\public&quot;&gt;</span><br><span class="line">      	Options FollowSymLinks ExecCGI</span><br><span class="line">        AllowOverride All</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        Require all granted</span><br><span class="line">  	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、TP框架基础"><a href="#三、TP框架基础" class="headerlink" title="三、TP框架基础"></a>三、TP框架基础</h1><h2 id="1、目录结构（重点）"><a href="#1、目录结构（重点）" class="headerlink" title="1、目录结构（重点）"></a>1、目录结构（重点）</h2><p>（见手册–基础–目录结构）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> 1.project  应用部署目录</span><br><span class="line"> 2.├─application           应用目录（可设置）</span><br><span class="line"> 3.│  ├─common             公共模块目录（可更改）</span><br><span class="line"> 4.│  ├─index              模块目录(可更改)</span><br><span class="line"> 5.│  │  ├─config.php      模块配置文件</span><br><span class="line"> 6.│  │  ├─common.php      模块函数文件</span><br><span class="line"> 7.│  │  ├─controller      控制器目录</span><br><span class="line"> 8.│  │  ├─model           模型目录</span><br><span class="line"> 9.│  │  ├─view            视图目录</span><br><span class="line">10.│  │  └─ ...            更多类库目录</span><br><span class="line">11.│  ├─command.php        命令行工具配置文件</span><br><span class="line">12.│  ├─common.php         应用公共（函数）文件</span><br><span class="line">13.│  ├─config.php         应用（公共）配置文件</span><br><span class="line">14.│  ├─database.php       数据库配置文件</span><br><span class="line">15.│  ├─tags.php           应用行为扩展定义文件</span><br><span class="line">16.│  └─route.php          路由配置文件</span><br><span class="line">17.├─extend                扩展类库目录（可定义）</span><br><span class="line">18.├─public                WEB 部署目录（对外访问目录）</span><br><span class="line">19.│  ├─static             静态资源存放目录(css,js,image)</span><br><span class="line">20.│  ├─index.php          应用入口文件</span><br><span class="line">21.│  ├─router.php         快速测试文件</span><br><span class="line">22.│  └─.htaccess          用于 apache 的重写</span><br><span class="line">23.├─runtime               应用的运行时目录（可写，可设置）</span><br><span class="line">24.├─vendor                第三方类库目录（Composer）</span><br><span class="line">25.├─thinkphp              框架系统目录</span><br><span class="line">26.│  ├─lang               语言包目录</span><br><span class="line">27.│  ├─library            框架核心类库目录</span><br><span class="line">28.│  │  ├─think           Think 类库包目录</span><br><span class="line">29.│  │  └─traits          系统 Traits 目录</span><br><span class="line">30.│  ├─tpl                系统模板目录</span><br><span class="line">31.│  ├─.htaccess          用于 apache 的重写</span><br><span class="line">32.│  ├─.travis.yml        CI 定义文件</span><br><span class="line">33.│  ├─base.php           基础定义文件</span><br><span class="line">34.│  ├─composer.json      composer 定义文件</span><br><span class="line">35.│  ├─console.php        控制台入口文件</span><br><span class="line">36.│  ├─convention.php     惯例配置文件</span><br><span class="line">37.│  ├─helper.php         助手函数文件（可选）</span><br><span class="line">38.│  ├─LICENSE.txt        授权说明文件</span><br><span class="line">39.│  ├─phpunit.xml        单元测试配置文件</span><br><span class="line">40.│  ├─README.md          README 文件</span><br><span class="line">41.│  └─start.php          框架引导文件</span><br><span class="line">42.├─build.php             自动生成定义文件（参考）</span><br><span class="line">43.├─composer.json         composer 定义文件</span><br><span class="line">44.├─LICENSE.txt           授权说明文件</span><br><span class="line">45.├─README.md             README 文件</span><br><span class="line">46.├─think                 命令行入口文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、配置文件（重点）"><a href="#2、配置文件（重点）" class="headerlink" title="2、配置文件（重点）"></a>2、配置文件（重点）</h2><p>（见手册–配置）</p>
+<p>①三个层级的配置文件：</p>
+<p>框架主配置文件（惯例配置文件） thinkphp/convention.php </p>
+<p>应用公共配置文件 application/config.php， application/database.php 对整个应用生效</p>
+<p>模块配置文件 application/模块目录/config.php 对当前模块生效</p>
+<p> ②其他说明：</p>
+<p>配置文件格式 return array( 键值对 );</p>
+<p>加载顺序： 框架主配置文件 》 应用公共配置文件 》 模块配置文件</p>
+<p>配置文件生效顺序： 后加载的生效（后加载的配置项会覆盖之前配置项）</p>
+<p>如果要手动进行配置，一般不要修改框架本身的主配置文件，</p>
+<p>而是在应用或者模块配置文件中进行配置。</p>
+<h2 id="3、函数文件"><a href="#3、函数文件" class="headerlink" title="3、函数文件"></a>3、函数文件</h2><p>框架助手函数文件 thinkphp/helper.php</p>
+<p>应用公共函数文件 application/common.php</p>
+<p>模块函数文件 application/模块目录/common.php</p>
+<p>一般不建议直接修改thinkphp/helper.php</p>
+<h2 id="4、开发规范（了解）"><a href="#4、开发规范（了解）" class="headerlink" title="4、开发规范（了解）"></a>4、开发规范（了解）</h2><p>TP框架编码规范：见手册–基础–开发规范</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps634B.tmp.jpg" alt="img"> </p>
+<p>扩展：PSR代码规范：<a href="https://www.kancloud.cn/thinkphp/php-fig-psr/3139" target="_blank" rel="noopener">https://www.kancloud.cn/thinkphp/php-fig-psr/3139</a></p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635C.tmp.jpg" alt="img"> </p>
+<h2 id="5、请求的生命周期"><a href="#5、请求的生命周期" class="headerlink" title="5、请求的生命周期"></a>5、请求的生命周期</h2><p>框架的生命周期，也就是请求的执行流程：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635D.tmp.jpg" alt="img"> </p>
+<h1 id="四、TP框架中的控制器"><a href="#四、TP框架中的控制器" class="headerlink" title="四、TP框架中的控制器"></a>四、TP框架中的控制器</h1><h2 id="1、控制器的后缀"><a href="#1、控制器的后缀" class="headerlink" title="1、控制器的后缀"></a>1、控制器的后缀</h2><p>打开配置文件application/config.php，有如下配置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'controller_suffix'</span> =&gt; <span class="keyword">false</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示默认情况下，控制器无特殊后缀。例如 Index控制器，文件名为Index.php</p>
+<p>如果需要进行设置，可以设置为（我们不需要这么设置）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'controller_suffix'</span> =&gt; <span class="string">'Controller'</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示控制器以Controller为后缀。例如Index控制器，文件名为IndexController.php</p>
+<h2 id="2、控制器的定义"><a href="#2、控制器的定义" class="headerlink" title="2、控制器的定义"></a>2、控制器的定义</h2><p>（见手册–控制器–控制器定义）</p>
+<p>1）定义位置及命名规则</p>
+<p>定义位置：application/模块目录/controller/目录下</p>
+<p>命名规则：控制器名称（首字母大写） + (控制器后缀，默认没有) + .php</p>
+<p>默认：Index控制器  Index.php</p>
+<p>  User控制器   User.php</p>
+<p>  Test控制器    Test.php</p>
+<p>示例：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps635E.tmp.jpg" alt="img"> </p>
+<p>2）编写控制器</p>
+<p>①声明命名空间  namespace  app\模块目录名\controller</p>
+<p>②引入控制器基类（可选） use think\Controller; think是命名空间 Controller是基类控制器</p>
+<p>③定义当前控制器类，继承控制器基类（可选）</p>
+<p>示例：定义测试控制器Test.php</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps636E.tmp.jpg" alt="img"> </p>
+<h2 id="3、框架中的命名空间"><a href="#3、框架中的命名空间" class="headerlink" title="3、框架中的命名空间"></a>3、框架中的命名空间</h2><p>命名空间本身是PHP就有的，用来防止命名冲突问题的。</p>
+<p>TP框架中的命名空间，通常和目录挂钩。</p>
+<p>原因：TP中的自动加载机制，会将类的命名空间作为加载路径的一部分。</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps636F.tmp.jpg" alt="img"> </p>
+<p>TP中命名空间使用：</p>
+<p>①声明命名空间 使用namespace关键字</p>
+<p>②引入指定的类 使用use关键字  命名空间\类名称</p>
+<p>③完全限定式访问  在使用类时，\完整命名空间\类名称（继承和实例化）</p>
+<p>如果一个类没有命名空间，使用 \类名</p>
+<h2 id="4、url访问"><a href="#4、url访问" class="headerlink" title="4、url访问"></a>4、url访问</h2><p>（见手册–架构–URL访问）</p>
+<p>ThinkPHP5.0框架中，默认使用PATH_INFO方式的url进行访问。</p>
+<p>示例：<a href="http://www.tpshop.com/index.php/Home/Test/index/page/10" target="_blank" rel="noopener">http://www.tpshop.com/index.php/Index/Test/index/page/10</a></p>
+<p>格式：<a href="http://域名/入口文件?m=分组名&c=控制器名称&a=操作方法名称&参数名=参数值" target="_blank" rel="noopener">http://域名/入口文件/模块名/控制器名称/操作方法名称/参数名/参数值</a></p>
+<p>隐藏入口文件写法：<a href="http://域名/入口文件?m=分组名&c=控制器名称&a=操作方法名称&参数名=参数值" target="_blank" rel="noopener">http://域名/模块名/控制器名称/操作方法名称/参数名/参数值</a></p>
+<p>需要对apache进行设置（手册–架构–URL访问、手册–部署–URL重写）</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6370.tmp.jpg" alt="img"> </p>
+<p>使用PHPStudy需要将 public目录的.htaccess文件中，index.php后面加上? </p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229371393.png" alt="1562229371393"></p>
+<p>使用Apapche的重写机制隐藏入口文件后，如果在整个url后面加上.html后缀, 让整个url看起来像是访问的静态页面。这叫做“伪静态”。</p>
+<h2 id="5、调试模式"><a href="#5、调试模式" class="headerlink" title="5、调试模式"></a>5、调试模式</h2><p>（见手册–错误与调试–调试模式）</p>
+<p>默认情况下，如果代码有误（比如控制器名拼写有误），会出现以下错误：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6382.tmp.jpg" alt="img"> </p>
+<p>错误描述比较模糊，不方便进行错误调试。这种模式通常叫做“部署模式”（生产模式）。</p>
+<p>开发阶段可以将框架设置为调试模式，便于进行错误调试：</p>
+<p>修改 项目目录\application目录\config.php</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6383.tmp.jpg" alt="img"> </p>
+<p>开启调试模式后，报错信息格式如下：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6384.tmp.jpg" alt="img"> </p>
+<p>会提示详细错误信息 和 错误位置（参考位置）。</p>
+<p>相对于 线上环境（开发完成后的阶段），叫做 部署模式或者生产模式。</p>
+<h1 id="五、创建模块"><a href="#五、创建模块" class="headerlink" title="五、创建模块"></a>五、创建模块</h1><h2 id="1、创建前台和后台模块"><a href="#1、创建前台和后台模块" class="headerlink" title="1、创建前台和后台模块"></a>1、创建前台和后台模块</h2><p>一个典型的应用是由多个模块组成的（通常有前台网站模块和后台管理系统模块），这些模块通常都是应用目录下面的一个子目录，每个模块都有自己独立的配置文件、公共文件和类库文件。</p>
+<p>我们给项目创建home（前台）和admin（后台）两个模块：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6395.tmp.jpg" alt="img"> </p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wps6396.tmp.jpg" alt="img"> </p>
+<h2 id="2、设置默认访问模块"><a href="#2、设置默认访问模块" class="headerlink" title="2、设置默认访问模块"></a>2、设置默认访问模块</h2><p>打开配置文件application/config.php，有如下配置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'default_module'</span> =&gt; <span class="string">'index'</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示默认访问模块为index模块</p>
+<p>可以更改默认模块为home模块</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'default_module'</span> =&gt; <span class="string">'home'</span>,</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、命令行创建模块目录及文件"><a href="#六、命令行创建模块目录及文件" class="headerlink" title="六、命令行创建模块目录及文件"></a>六、命令行创建模块目录及文件</h1><p>在 <strong>项目根目录</strong> 执行命令（think文件所在的目录）</p>
+<h2 id="1、命令行创建模块目录"><a href="#1、命令行创建模块目录" class="headerlink" title="1、命令行创建模块目录"></a>1、命令行创建模块目录</h2><p>（见手册 – 命令行 – 自动生成目录结构）</p>
+<p>通常可以通过以下命令，自动生成模块目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php think build --module 模块名</span><br></pre></td></tr></table></figure>
+
+<p>比如：创建test模块目录，执行命令 php think build –module test即可。（模块名小写）</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsAFC3.tmp.jpg" alt="img"> </p>
+<h2 id="2、命令行创建控制器"><a href="#2、命令行创建控制器" class="headerlink" title="2、命令行创建控制器"></a>2、命令行创建控制器</h2><p>（见手册 – 命令行 – 创建类库文件）</p>
+<p>通常可以通过以下命令，自动创建控制器</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php think make:controller 模块名/控制器名 </span><br><span class="line">php think make:controller 模块名/控制器名 --plain</span><br></pre></td></tr></table></figure>
+
+<p>加上 –plain 参数 表示创建没有方法的空控制器类。否则控制器类中会自带一些方法。</p>
+<p>比如：创建home模块Index控制器，执行命令 php think make:controller home/Index即可。</p>
+<p>注意：控制器名首字母大写。</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB002.tmp.jpg" alt="img"> </p>
+<h2 id="3、命令行创建模型"><a href="#3、命令行创建模型" class="headerlink" title="3、命令行创建模型"></a>3、命令行创建模型</h2><p>（见手册 – 命令行 – 创建类库文件）</p>
+<p>通常可以通过以下命令，自动创建模型</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php think make:model 模块名/模型名</span><br></pre></td></tr></table></figure>
+
+<p>比如：创建home模块User模型，执行命令 php think make:model home/User即可。</p>
+<p>注意：模型名首字母大写。</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB003.tmp.jpg" alt="img"> </p>
+<h1 id="七、Request请求类"><a href="#七、Request请求类" class="headerlink" title="七、Request请求类"></a>七、Request请求类</h1><h2 id="1、获取输入变量"><a href="#1、获取输入变量" class="headerlink" title="1、获取输入变量"></a>1、获取输入变量</h2><p>（见手册–请求–输入变量）</p>
+<p>要获取当前的请求信息，可以使用\think\Request类</p>
+<p>$request = \think\Request::instance();</p>
+<p>或者使用助手函数</p>
+<p>$request = request();</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB004.tmp.jpg" alt="img"> </p>
+<p>也可以单独获取get变量或者post变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Request::instance()-&gt;get();</span><br><span class="line">Request::instance()-&gt;post();</span><br><span class="line">input(&apos;get.&apos;);</span><br><span class="line">input(&apos;post.&apos;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB005.tmp.jpg" alt="img"> </p>
+<p>代码示例：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB016.tmp.jpg" alt="img"> </p>
+<p>浏览器访问效果：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB017.tmp.jpg" alt="img"> </p>
+<p>特殊说明：路由变量与get变量</p>
+<p><a href="http://www.tpshop.com/home/test/index/id/100?page=10" target="_blank" rel="noopener">http://www.tpshop.com/home/test/index/id/100?page=10</a></p>
+<p>param方法 能够获取所有参数（id, page）</p>
+<p>get方法 只能获取?后面的请求字符串的参数（page）</p>
+<p>route方法 只能获取到?前面的路由中的参数（id）</p>
+<h2 id="2、参数绑定"><a href="#2、参数绑定" class="headerlink" title="2、参数绑定"></a>2、参数绑定</h2><p>（见手册–请求–参数绑定）</p>
+<p>方法参数绑定是把URL地址（或者路由地址）中的变量作为操作方法的参数直接传入。</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB018.tmp.jpg" alt="img"> </p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB019.tmp.jpg" alt="img"> </p>
+<p>使用示例：home模块Test控制器read方法中，声明$id参数</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB029.tmp.jpg" alt="img"> </p>
+<p>访问url中，传递id参数  <a href="http://www.tpshop.com/home/test/read/id/100" target="_blank" rel="noopener">http://www.tpshop.com/home/test/read/id/100</a></p>
+<p>效果：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB02A.tmp.jpg" alt="img"> </p>
+<h2 id="3、依赖注入"><a href="#3、依赖注入" class="headerlink" title="3、依赖注入"></a><strong>3、依赖注入</strong></h2><p>（见手册–请求–依赖注入）</p>
+<p>依赖注入：简单的说，要在一个类A中使用另一个依赖类B时，不直接在类A中实例化类B，而是先实例化类B后再以参数的形式传入类A.</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB02B.tmp.jpg" alt="img"><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/wpsB03C.tmp.jpg" alt="img"> </p>
+<p>框架中的使用：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229297100.png" alt="1562229297100"></p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229323006.png" alt="1562229323006"></p>
+<p>原理分析：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229272862.png" alt="1562229272862"></p>
+<p>补充说明：Request请求类中，封装了很多和请求相关的方法，详情见手册–请求（多看）</p>
+<p>小结：</p>
+<p>可以找到任何一种方法 接收请求参数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取请求对象  </span></span><br><span class="line">$request = request();</span><br><span class="line">$request = \think\Request::instance();</span><br><span class="line">$request = <span class="keyword">$this</span>-&gt;request; <span class="comment">//仅限于继承了底层控制器的情况下</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span><span class="params">(Request $request)</span>  //依赖注入</span></span><br><span class="line"><span class="function">   //2. 接收请求参数 <span class="title">param</span>方法</span></span><br><span class="line">    $params = $request-&gt;param();</span><br><span class="line">	$params = input();</span><br><span class="line">	$params = request()-&gt;param();</span><br><span class="line">	$id = $request-&gt;param(<span class="string">'id'</span>);</span><br><span class="line">	$id = input(<span class="string">'id'</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">edit</span><span class="params">($id)</span>//参数绑定</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="八、ThinkPHP框架中的视图"><a href="#八、ThinkPHP框架中的视图" class="headerlink" title="八、ThinkPHP框架中的视图"></a>八、ThinkPHP框架中的视图</h1><h2 id="1、视图的组成"><a href="#1、视图的组成" class="headerlink" title="1、视图的组成"></a>1、视图的组成</h2><p>View视图类（继承了自定义模板引擎，功能与Smarty类似）</p>
+<p>HTML模板文件</p>
+<h2 id="2、模板的定义"><a href="#2、模板的定义" class="headerlink" title="2、模板的定义"></a>2、模板的定义</h2><p>（见手册–模板–模板定位）</p>
+<p>为了对模板文件更加有效的管理，ThinkPHP对模板文件进行目录划分，默认的模板文件定义规则是：视图目录/控制器名（小写）/操作名（小写）+模板后缀</p>
+<p>默认的视图目录是模块的view目录，框架的默认视图文件后缀是.html。</p>
+<p>比如home模块 Index控制器index方法要调用的模板定义为view/index/index.html</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229244022.png" alt="1562229244022"></p>
+<h2 id="3、模板渲染"><a href="#3、模板渲染" class="headerlink" title="3、模板渲染"></a>3、模板渲染</h2><p>（见手册–视图–模板渲染，手册–视图–模板赋值）</p>
+<p>在控制器方法中，</p>
+<p>第一种：使用assign方法进行模板赋值，使用fetch方法进行模板渲染。</p>
+<p>第二种：使用助手函数view(), 进行模板渲染并赋值。</p>
+<p>使用示例：</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562228904272.png" alt="1562228904272"></p>
+<p>注：模板中输出变量值： {$模板变量名}</p>
+<h1 id="九、将后台模板与框架做结合"><a href="#九、将后台模板与框架做结合" class="headerlink" title="九、将后台模板与框架做结合"></a>九、将后台模板与框架做结合</h1><p>模板整合思路：</p>
+<p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<p>③将模板页面移动到对应的视图目录下（创建子目录）</p>
+<p>④将静态资源文件移动到public/static/admin目录下</p>
+<p>⑤修改模板文件中静态资源路径</p>
+<p>页面分布：</p>
+<p>登录页      Login控制器login方法  login.html</p>
+<p>首页        Index控制器index方法  index.html</p>
+<p>商品列表    Goods控制器index方法  goods_list.html  -&gt;  index.html</p>
+<p>商品新增    Goods控制器create方法  goods_add.html  -&gt; create.html</p>
+<p>商品修改    Goods控制器edit方法    goods_edit.html   -&gt; edit.html</p>
+<p>管理员列表    Manager控制器index方法  manager_list.html   -&gt; index.html</p>
+<p>管理员新增    Manager控制器create方法  manager_add.html  -&gt; create.html</p>
+<p>管理员修改    Manager控制器edit方法    manager_edit.html  -&gt;edit.html</p>
+<p>…</p>
+<h2 id="1、模板布局"><a href="#1、模板布局" class="headerlink" title="1、模板布局"></a>1、模板布局</h2><p>（见手册–模板–模板布局）</p>
+<p>使用模板布局，就是把多个模板页面都有的公共代码给抽取出来，放到一个公共位置开发维护</p>
+<p>好处：相同的代码只维护一份，减少代码工作量</p>
+<p>后台全局布局设置步骤：</p>
+<p>①修改配置文件application/admin/config.php,加入以下设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;template&apos;  =&gt;  [</span><br><span class="line">    &apos;layout_on&apos;     =&gt;  true,//开启布局</span><br><span class="line">    &apos;layout_name&apos;   =&gt;  &apos;layout&apos;,//布局文件名称</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562228971516.png" alt="1562228971516"> </p>
+<p>②将静态资源文件移动到/public/static/admin目录下</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229048578.png" alt="1562229048578"> </p>
+<p>③在application/admin/view目录下，新建layout.html</p>
+<p>将后台页面公共的头部、底部代码提取到layout.html中，在中间位置放一个特殊字符串“{_<em>CONTENT_</em>}”，表示此位置，替换为原始要访问的页面内容。</p>
+<p>layout.html文件中， 只保留所有页面<strong>公共</strong> 的css和js相关代码，修改静态资源路径</p>
+<p>注： <strong>一定不能</strong> 直接将所有css和js都放在layout.html中。</p>
+<p>注：TP框架中，模板中的静态资源路径，不能使用相对路径./ ，必须使用以/开头的路径。</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229014904.png" alt="1562229014904"></p>
+<p>④临时关闭模板布局</p>
+<p>全局布局设置，对所有页面全部生效。</p>
+<p>特殊页面（不需要使用布局的页面），可以在控制器方法中，临时关闭模板布局。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;view-&gt;engine-&gt;layout(<span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>比如登录页面，不需要使用布局，见 “3、后台登录页”</p>
+<h2 id="2、后台首页"><a href="#2、后台首页" class="headerlink" title="2、后台首页"></a>2、后台首页</h2><p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>admin模块Index控制器index方法</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">admin</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> view();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>③将模板页面移动到对应的视图目录下</p>
+<p>index.html    =&gt;     application/admin/view/index/index.html</p>
+<p>④修改模板文件</p>
+<p>保留页面独有的静态资源文件，以及主体部分代码</p>
+<p>修改模板文件中静态资源路径</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229073574.png" alt="1562229073574"></p>
+<p><strong>注：如果页面显示效果不对，可以考虑先删除缓存 runtime目录</strong></p>
+<h2 id="3、后台登录页"><a href="#3、后台登录页" class="headerlink" title="3、后台登录页"></a>3、后台登录页</h2><p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>admin模块 login控制器  login方法</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<p>注：后台的登录页面，不需要使用布局</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229165085.png" alt="1562229165085"></p>
+<p>③将模板页面移动到对应的视图目录下</p>
+<p>将login.html 移动到 application/admin/view/login/目录下</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229188964.png" alt="1562229188964"></p>
+<p>⑤修改模板文件中静态资源路径</p>
+<p>修改application/admin/view/login/login.html</p>
+<p>注：也可以使用_<em>STATIC_</em> 代替静态资源路径中的/static（手册–视图–输出替换）</p>
+<p><img src="D:/74%E6%9C%9F/TP5/01-thinkphp/%E7%AC%94%E8%AE%B0/img/1562229209387.png" alt="1562229209387"></p>
+<h2 id="4、其他页面"><a href="#4、其他页面" class="headerlink" title="4、其他页面"></a>4、其他页面</h2><p>重复步骤①②③⑤</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>整合以下模板</p>
+<p>商品列表    Goods控制器index方法  goods_list.html  -&gt;  index.html</p>
+<p>商品新增    Goods控制器create方法  goods_add.html  -&gt; create.html</p>
+<p>商品修改    Goods控制器edit方法    goods_edit.html   -&gt; edit.html</p>
+<p>管理员列表    Manager控制器index方法  manager_list.html   -&gt; index.html</p>
+<p>管理员新增    Manager控制器create方法  manager_add.html  -&gt; create.html</p>
+<p>管理员修改    Manager控制器edit方法    manager_edit.html  -&gt;edit.html</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>1.安装部署框架，熟悉目录结构（application   public）</p>
+<p>2.控制器定义、控制器的访问（隐藏入口文件、Path_info格式url） 能够访问到指定的控制器方法</p>
+<p>3.命令行操作（创建模块，创建控制器类）（环境变量等）</p>
+<p>4.Request请求对象基本使用–接收参数（熟练使用一种写法）</p>
+<p>5.模板整合（模板布局）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/02/我的第一篇博客test/" data-id="ck19dc7uq0001qgqdxfpw0jff" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/02/我的第一篇博客test/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
